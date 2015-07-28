@@ -1,12 +1,16 @@
 <div id="secondary">
 
-	{{ if isset .Site.Params "Description" }} 
-		{{ with .Site.Params.Description }}<h2 class="site-description">{{ . }}</h2>{{ end }}
-	{{ end }}
-
 	<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+	{{ with .Site.Params.subtitle }}<h2 class="site-description">{{ . }}</h2>{{ end }}
 
+
+	<!--
 		{{ partial "searchform.html" . }}
+	-->
+
+	    <div>
+	      {{ with .Site.Params.profile }}<img src="{{ . }}" width="64" height="64"><br>{{ end }}
+	    </div>
 
 		{{ partial "recentposts.html" . }}
 

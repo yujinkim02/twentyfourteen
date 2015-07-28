@@ -28,22 +28,58 @@
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner">
 		<div class="header-main">
-			<h1 class="site-title"><a href="{{ .Site.BaseURL }}/index.html" rel="home">{{ .Site.Title }}</a></h1>
-
-			<div class="search-toggle">
-				<a href="#search-container" class="screen-reader-text">Search</a>
-			</div>
-
+			<h2 class="site-title"><a href="{{ .Site.BaseURL }}/index.html" rel="home">{{ .Site.Title }}</a></h2>
 			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
 				<button class="menu-toggle">Primary Menu</button>
 				<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
 				<div class="nav-menu">
 					<ul>
-						{{ range .Site.Menus.main }}
-						<li class="page_item"> 
-							<a href="{{ .URL }}index.html">{{ .Name }}</a>
-						</li>
-						{{ end }}
+						<li class="page_item"><a href="/page/about">about</a></li>
+						<li class="page_item"><a href="/page/resume">resume</a></li>
+						
+						<span style="color: #fff">|</span>
+
+						<!--
+						{{ with .Site.Params.twitter }}<li><a href="{{ . }}" target="_blank">twitter</a></li>{{ end }}
+				        {{ with .Site.Params.facebook }}<li><a href="{{ . }}" target="_blank">facebook</a></li>{{ end }}
+			            {{ with .Site.Params.github }}<li><a href="{{ . }}" target="_blank">github</a></li>{{ end }}
+			            {{ with .Site.Params.linkedin }}<li><a href="{{ . }}" target="_blank">linkedin</a></li>{{ end }}
+			            -->
+
+			            {{ with .Site.Params.twitter }}
+			            <li>
+			            	<a href="{{ . }}"><img height="20" width="20" src="/images/twitter-dreamstale71.png"></img></a>
+			            </li>
+			            {{ end }}
+			            {{ with .Site.Params.github }}
+			            <li>
+			            	<a href="{{ . }}"><img height="20" width="20" src="/images/github2-dreamstale35.png"></img></a>
+			            </li>
+			            {{ end }}
+			            {{ with .Site.Params.linkedin }}
+			            <li>
+			            	<a href="{{ . }}"><img height="20" width="20" src="/images/linkedin-dreamstale45.png"></img></a>
+			            </li>
+			            {{ end }}
+			            {{ with .Site.Params.facebook }}
+			            <li>
+			            	<a href="{{ . }}"><img height="20" width="20" src="/images/facebook-dreamstale25.png"></img></a>
+			            </li>
+			            {{ end }}
+			            {{ with .Site.Params.google }}
+			            <li>
+			            	<a href="{{ . }}"><img height="20" width="20" src="/images/google+-dreamstale25.png"></img></a>
+			            </li>
+			            {{ end }}
+
+						<span style="color: #fff">|</span>
+			            
+			            <li>
+			            	<a href="{{ .RSSLink }}"><img height="20" width="20" src="/images/feed-dreamstale27.png"></img></a>
+			            </li>
+
+
+
 					</ul>
 				</div>
 			</nav>

@@ -937,6 +937,13 @@ span + .edit-link:before,
  * -----------------------------------------------------------------------------
  */
 
+ .site-navigation a {
+	color: #fff;
+	display: block;
+	text-transform: uppercase;
+}
+
+
 .site-navigation ul {
 	list-style: none;
 	margin: 0;
